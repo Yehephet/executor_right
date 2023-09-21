@@ -1,0 +1,146 @@
+.rightFilterExecutor {
+  position: relative;
+  padding: 26px 19px 33px;
+  width: 401px;
+  min-height: 618px;
+  height: auto;
+  background-color: #F3F3F3;
+
+  .headerExecutorContent {
+    position: relative;
+
+    p {
+      width: 181px;
+    }
+
+    .closeBtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+
+      svg path {
+        fill: #4D4D4D;
+      }
+
+      &:hover {
+        svg path {
+          fill: #CF0106;
+        }
+      }
+
+    }
+  }
+
+  .line {
+    margin-top: 19px;
+    margin-bottom: 39px;
+  }
+
+  .centerExecutorContent {
+    width: 100%;
+    min-height: 180px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .mainTextPart {
+      width: 290px;
+      height: auto;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      height: auto;
+
+      .stepsComponent {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 33px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 16px;
+
+    .checkboxes {
+      margin: 68px 0;
+      display: flex;
+      column-gap: 31px;
+
+      div {
+        display: flex;
+        column-gap: 5px;
+        align-items: center;
+
+        input[type="checkbox"] {
+          width: 16px;
+          height: 16px;
+          position: relative;
+          appearance: none;
+          border: 2px solid gray;
+          border-radius: 2px;
+          transition: border-color 0.3s, background-color 0.3s;
+
+          &:focus,
+          &:active {
+            border-color: red;
+          }
+
+          &:checked {
+            border-color: red;
+            background-color: transparent;
+
+            &::before {
+              content: "";
+              width: 7px;
+              height: 7px;
+              background-color: red;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          &::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border: 2px solid transparent;
+            border-top: none;
+            border-right: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          &:hover {
+            border-color: red;
+          }
+
+          &:checked::before {
+            border-color: transparent;
+          }
+
+          &:not(:checked):not(:hover) {
+            border-color: gray;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      column-gap: 16px;
+    }
+  }
+}

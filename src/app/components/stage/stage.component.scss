@@ -1,0 +1,9 @@
+.step {
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+
+    .descriptionStepText {
+      width: 77px;
+    }
+}

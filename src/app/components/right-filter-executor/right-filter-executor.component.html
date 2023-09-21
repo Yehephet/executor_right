@@ -1,0 +1,17 @@
+<h3 class="p-l-20 p-t-15"> Right executor </h3>
+
+<mefdev-right-executor (emitCurrentStep)="getCurrentStep($event)" [countOfSteps]="countSteps">
+  <ng-container rightExecutorHeader>Process header</ng-container>
+
+  <ng-container rightExecutorTopDescription>
+    Description of the step-by-step process in two raw.
+  </ng-container>
+
+  <mefdev-executor-page [stepContent]="stepsContentArr[currentStep - 1]"></mefdev-executor-page>
+
+  <mefdev-stage [numberOfSteps]="5" [currentExecutorStep]="currentStep" [isRightModal]="true" (emitOutputCountOfSteps)="getCountSteps($event)"></mefdev-stage>
+
+  <ng-container previousButtonContent>Previous</ng-container>
+  <ng-container nextButtonContent>Next</ng-container>
+
+</mefdev-right-executor>

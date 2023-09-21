@@ -1,0 +1,10 @@
+<div *ngIf="stepContent; else noContent">
+    <h3 *ngIf="stepContent.title">{{stepContent.title}}</h3>
+    <div *ngIf="stepContent.content; else noStepContent" class="step_content">{{stepContent.content}}</div>
+    <ng-template #noStepContent>
+        <p>THIS STEP HAS NO CONTENT. ADD IT</p>
+    </ng-template>
+</div>
+<ng-template #noContent>
+    <p>NO CONTENT</p>
+</ng-template>

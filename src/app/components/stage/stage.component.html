@@ -1,0 +1,24 @@
+<div class="step" *ngFor="let step of stepsArray; let i = index;">
+    <ng-container *ngIf="step > currentExecutorStep; else done">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+            <rect width="36" height="36" rx="18"
+                    [ngStyle]="isRightModal ? { 'fill': '#FFFFFF' } : { 'fill': '#F3F3F3' }"/>
+            <text class="body-3" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16"
+                  fill="black">{{ step }}</text>
+        </svg>
+    </ng-container>
+    <div *ngIf="!isRightModal" class="descriptionStepText body-6">
+        <ng-container *ngFor="let description of stepDescriptions">
+            <ng-template *ngIf="description.StepDescription === step"
+                         [ngTemplateOutlet]="description.templateRef"></ng-template>
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #done>
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#929292"/>
+        <path d="M24.7373 10L14.5466 20.3769L11.2415 17.0114L8 20.3122L11.3051 23.6777L14.5678 27L17.8093 23.6992L28 13.3224L24.7373 10Z"
+              fill="#28B446"/>
+    </svg>
+</ng-template>

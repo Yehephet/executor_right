@@ -1,0 +1,40 @@
+<div class="rightFilterExecutor">
+  <header class="headerExecutorContent">
+    <h4 class="body-1">
+      <ng-content select="[rightExecutorHeader]"></ng-content>
+    </h4>
+    <p class="body-5">
+      <ng-content select="[rightExecutorTopDescription]"></ng-content>
+    </p>
+    <div class="closeBtn">
+      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M16.0566 1.59971L14.6566 0.199707L8.05664 6.79971L1.45664 0.199707L0.0566406 1.59971L6.65664 8.19971L0.0566406 14.7997L1.45664 16.1997L8.05664 9.59971L14.6566 16.1997L16.0566 14.7997L9.45664 8.19971L16.0566 1.59971Z"
+              fill="#525252"/>
+      </svg>
+    </div>
+  </header>
+  <div class="line">
+    <svg width="363" height="1" viewBox="0 0 363 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="-4.37114e-08" y1="0.5" x2="362.674" y2="0.499968" stroke="#4D4D4D"/>
+    </svg>
+  </div>
+  <main class="centerExecutorContent">
+    <div class="mainTextPart">
+      <ng-content select="mefdev-executor-page"></ng-content>
+    </div>
+    <div class="steps">
+      <ng-content select="mefdev-stage"></ng-content>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="buttons">
+      <button type="button" class="btn btn-primary" (click)="changeCurrentStep('back')" [disabled]="currentExecutorStep === 1">
+          <ng-content select="[previousButtonContent]"></ng-content>
+      </button>
+      <button type="button" class="btn btn-success" (click)="changeCurrentStep('forward')">
+        <ng-content select="[nextButtonContent]"></ng-content>
+      </button>
+    </div>
+  </footer>
+</div>
